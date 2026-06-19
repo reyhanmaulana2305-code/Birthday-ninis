@@ -49,19 +49,3 @@ const countdown = setInterval(() => {
     }
 
 },1000);
-
-// Tombol musik
-
-const musicBtn =
-document.getElementById("musicBtn");
-
-const bgMusic =
-document.getElementById("bgMusic");
-
-musicBtn.addEventListener("click",()=>{
-
-    bgMusic.play();
-
-    musicBtn.innerHTML =
-    "💖 Musik Sedang Diputar";
-});

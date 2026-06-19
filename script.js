@@ -3,7 +3,7 @@
 // ======================
 
 const birthdayDate =
-new Date("2026-06-20 01:01:00").getTime();
+new Date("2026-06-20 01:07:00").getTime();
 
 const countdown = setInterval(() => {
 

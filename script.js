@@ -1,0 +1,67 @@
+// ======================
+// TANGGAL 
+// ======================
+
+const birthdayDate =
+new Date("2026-06-20 01:01:00").getTime();
+
+const countdown = setInterval(() => {
+
+    const now = new Date().getTime();
+
+    const distance = birthdayDate - now;
+
+    const days =
+    Math.floor(distance / (1000*60*60*24));
+
+    const hours =
+    Math.floor(
+        (distance % (1000*60*60*24))
+        /(1000*60*60)
+    );
+
+    const minutes =
+    Math.floor(
+        (distance % (1000*60*60))
+        /(1000*60)
+    );
+
+    const seconds =
+    Math.floor(
+        (distance % (1000*60))
+        /1000
+    );
+
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+    if(distance < 0){
+
+        clearInterval(countdown);
+
+        document.querySelector(".container")
+        .style.display = "none";
+
+        document.getElementById("birthdayPage")
+        .classList.remove("hidden");
+    }
+
+},1000);
+
+// Tombol musik
+
+const musicBtn =
+document.getElementById("musicBtn");
+
+const bgMusic =
+document.getElementById("bgMusic");
+
+musicBtn.addEventListener("click",()=>{
+
+    bgMusic.play();
+
+    musicBtn.innerHTML =
+    "💖 Musik Sedang Diputar";
+});
